@@ -38,6 +38,7 @@
 				<value>com.foodizta.api.domain.Nutrient</value>
 				<value>com.foodizta.api.domain.Review</value>
 				<value>com.foodizta.api.domain.AreasTargeted</value>
+				<value>com.foodizta.api.domain.ItemType</value>
 			</list>
 		</property>
 	</bean>

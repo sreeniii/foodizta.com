@@ -22,6 +22,9 @@ public class Chef extends PersistentEntity {
 
 	@Column(name = "intro")
 	private String intro;
+	
+	@Column(name="imageUrl")
+	private String imageUrl;
 
 	@Column(name = "description")
 	private String description;
@@ -83,5 +86,13 @@ public class Chef extends PersistentEntity {
 
 	public void setAreasTargeted(Set<AreasTargeted> areasTargeted) {
 		this.areasTargeted = areasTargeted;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }
