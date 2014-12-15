@@ -23,7 +23,7 @@ public class Chef extends PersistentEntity {
 	@Column(name = "intro")
 	private String intro;
 	
-	@Column(name="imageUrl")
+	@Column(name="image_url")
 	private String imageUrl;
 
 	@Column(name = "description")
