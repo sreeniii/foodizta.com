@@ -31,6 +31,13 @@ public class Item extends PersistentEntity {
 	@Column(name="description")
 	private String description;
 	
+	@Column(name="image_url")
+	private String imageUrl;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "item_type_id", nullable = false)
+	private ItemType itemType;
+	
 	@Column(name="price")
 	private BigDecimal price;
 	
@@ -129,5 +136,21 @@ public class Item extends PersistentEntity {
 
 	public void setItemNutrients(Set<Nutrient> itemNutrients) {
 		this.itemNutrients = itemNutrients;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public ItemType getItemType() {
+		return itemType;
+	}
+
+	public void setItemType(ItemType itemType) {
+		this.itemType = itemType;
 	}
 }
