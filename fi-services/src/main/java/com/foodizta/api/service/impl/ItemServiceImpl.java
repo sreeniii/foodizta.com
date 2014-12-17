@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.foodizta.api.dao.IAreasTargetedDao;
-import com.foodizta.api.dao.IItemDao;
 import com.foodizta.api.model.ItemDto;
 import com.foodizta.api.model.ResponseDto;
 import com.foodizta.api.service.IItemService;
@@ -14,8 +13,12 @@ import com.foodizta.api.service.IItemService;
 @Service
 public class ItemServiceImpl implements IItemService {
 
-	@Autowired
 	private IAreasTargetedDao areasTargetedDao;
+
+	@Autowired
+	public ItemServiceImpl(IAreasTargetedDao areasTargetedDao) {
+		this.areasTargetedDao = areasTargetedDao;
+	}
 
 	public ResponseDto getItemsByAreaCode(String zipCode) {
 		ResponseDto responseDto = new ResponseDto();

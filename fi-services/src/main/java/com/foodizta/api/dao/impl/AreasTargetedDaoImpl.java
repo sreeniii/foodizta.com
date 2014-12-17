@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.foodizta.api.dao.IAreasTargetedDao;
@@ -16,6 +17,7 @@ import com.foodizta.api.model.ItemDto;
 public class AreasTargetedDaoImpl extends GenericDaoImpl<AreasTargeted, Long> implements
 		IAreasTargetedDao {
 
+	@Autowired
 	public AreasTargetedDaoImpl(SessionFactory sessionFactory) {
 		super(sessionFactory);
 		// TODO Auto-generated constructor stub
