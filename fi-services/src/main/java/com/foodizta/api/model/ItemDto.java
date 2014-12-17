@@ -30,6 +30,8 @@ public class ItemDto {
 	private String shortDescription;
 	
 	private String description;
+	
+	private String magentoUrl;
 
 	public String getName() {
 		return name;
@@ -103,6 +105,14 @@ public class ItemDto {
 		this.description = description;
 	}
 
+	public String getMagentoUrl() {
+		return magentoUrl;
+	}
+
+	public void setMagentoUrl(String magentoUrl) {
+		this.magentoUrl = magentoUrl;
+	}
+
 	public static List<ItemDto> prepareItemDto(HashSet<AreasTargeted> areasTargetedList) {
 		List<ItemDto> itemDtoList = new ArrayList<ItemDto>();
 		for(AreasTargeted areasTargeted : areasTargetedList) {
@@ -116,6 +126,7 @@ public class ItemDto {
 				itemDto.setItemType(item.getItemType().getName());
 				itemDto.setImageUrl(item.getImageUrl());
 				itemDto.setChef(chef.getName());
+				itemDto.setMagentoUrl(item.getMagentoUrl());
 				
 				List<String> nutrients =  new ArrayList<String>();
 				for(Nutrient nutrient : item.getItemNutrients()) {

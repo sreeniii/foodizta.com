@@ -9,13 +9,23 @@ import org.springframework.web.bind.annotation.RestController;
 import com.foodizta.api.model.ResponseDto;
 import com.foodizta.api.service.IItemService;
 
+/**
+ * The Class SearchController.
+ */
 @RestController
 @RequestMapping("/items/")
 public class SearchController {
 	
+	/** The item service. */
 	@Autowired
 	private IItemService itemService;
 
+	/**
+	 * Find items by zip.
+	 *
+	 * @param zip the zip
+	 * @return the response dto
+	 */
 	@RequestMapping(value = "/{zip}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public ResponseDto findItemsByZip(@PathVariable String zip) {
 		return itemService.getItemsByAreaCode(zip);
